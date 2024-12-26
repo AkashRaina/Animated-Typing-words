@@ -1,0 +1,54 @@
+<div class="container">
+    <h1 class="typeJsText" data-typetext="website Developer"></h1>
+  </div>
+
+
+<style>
+  /* type js style  */
+@media screen and (min-width: 480px) {
+  .container .typeJsText {
+  
+  font-family: Montserrat !important;
+font-weight: 700;
+  font-size: 44px;
+  color:#f3590f;
+  display: inline-block;
+  padding: 0;
+  border-right: 1px solid #414141;
+  text-align: left;
+  text-transform: uppercase;
+}
+  }
+  
+  
+
+  
+  </style>
+
+<script>
+  // type js plugin
+let typeJsText = document.querySelector(".typeJsText");
+let textArray = typeJsText.dataset.typetext.split("");
+let counter = -1;
+
+typeJsText.innerHTML = "";
+
+function typeJs() {
+  if (counter < typeJsText.dataset.typetext.length) {
+    counter++;
+    typeJsText.innerHTML += typeJsText.dataset.typetext.charAt(counter);
+    textArray = typeJsText.dataset.typetext.split("");
+  } else {
+    textArray.pop();
+    typeJsText.innerHTML = textArray.join("");
+    if (textArray.length == 0) {
+      counter = -1;
+    }
+  }
+}
+
+setInterval(() => {
+  typeJs();
+}, 100);
+
+  </script>
